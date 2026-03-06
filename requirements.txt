@@ -4,5 +4,6 @@ numba>=0.56
 matplotlib>=3.5
 lightgbm>=3.3
 scikit-learn>=1.0
-streamlit
-plotly
+streamlit>=1.35.0
+plotly>=5.0
+altair>=5.0
