@@ -2,7 +2,7 @@
 
 Evaluation of 3,669 strategies based on technical trading rules applied to Bitcoin 5-minute data, with data snooping correction via White's Reality Check, walk-forward out-of-sample testing, and machine learning signal combination.
 
-> This README is a concise overview. For extensive description and full visualizations, please see the **[Streamlit link]**.
+> This README is a concise overview. For extensive description and full visualizations, please see the **[interactive dashboard](https://technical-trading-rules-based-strategies-btc.streamlit.app/)**.
 
 ## Data
 
@@ -35,7 +35,7 @@ Each strategy generates a signal (+1 or -1) at every 5-minute interval based on 
 
 **Phase 1 — full-sample backtest + data snooping correction.** All 3,669 strategies are tested on the full sample. White's Reality Check (2000) with Politis-Romano stationary bootstrap (B=1,000, q=0.1) is applied to net returns to correct for multiple hypothesis testing — the risk that some strategies appear profitable purely by chance when testing thousands simultaneously.
 
-**Phase 2 — walk-forward analysis.** Although Phase 1 shows no statistically significant alpha, we test the best-performing strategy out of sample to explore the gap between statistical significance and practical performance. MAc(7,10) is tested using expanding-window walk-forward tech: training begins with 2017-2018, and each subsequent period adds one year of training data, with annual out-of-sample periods from 2019 through 2022. Parameters are fixed, no re-optimization occurs.
+**Phase 2 — walk-forward analysis.** Although Phase 1 shows no statistically significant alpha, we test the best-performing strategy out of sample to explore the gap between statistical significance and practical performance. MAc(7,10) is tested using expanding-window walk-forward technique: training begins with 2017-2018, and each subsequent period adds one year of training data, with annual out-of-sample periods from 2019 through 2022. Parameters are fixed, no re-optimization occurs.
 
 **Phase 3 — signal combination.** Raw signals from all 3,669 strategies are used as input features for a LightGBM model, trained via expanding-window walk-forward with quarterly retraining to predict forward return direction. A 25 bps bandwidth filter classifies target returns (round-trip transaction cost of 20 bps plus a small margin to filter noise). When the model predicts no clear direction, the current position is maintained rather than exiting to cash, reducing turnover and transaction costs.
 
