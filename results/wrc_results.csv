@@ -1,0 +1,2 @@
+wrc_p_value,wrc_B,wrc_q,best_strategy,n_strategies,n_observations,transaction_cost_bps
+0.846,1000,0.1,"MAc(7,10,0.01,0,0)",3669,630720,10
