@@ -84,7 +84,9 @@ MAc(7,10) with fixed parameters tested on 4 annual out-of-sample periods (expand
 Profitable in 4 out of 4 out-of-sample periods, outperforming buy-and-hold in 3 of 4. When parameters are instead optimized each period (WFO), profitability drops to 3/4 with Sharpe degradation of -10.4%, consistent with mild overfitting. This illustrates the gap between statistical significance (WRC p = 0.846) and practical out-of-sample performance.
 
 An additional out-of-sample run on 2023–2026 data shows +22% vs buy & hold +309% and most importantly Sharpe of 0.112, 
-consistent with the WRC finding of no persistent alpha. See `figures/mac_2023_2025.png`.
+consistent with the WRC finding of no persistent alpha.
+
+![Out-of-sample 2023–2026](figures/mac_2023_2025.png)
 
 ### Phase 3: Signal Combination (LightGBM)
 
